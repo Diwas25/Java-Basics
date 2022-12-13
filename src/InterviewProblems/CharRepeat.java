@@ -1,3 +1,4 @@
+package InterviewProblems;
 
 public class CharRepeat {
 
