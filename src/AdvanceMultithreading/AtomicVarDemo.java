@@ -19,13 +19,13 @@ public class AtomicVarDemo {
     public static void main(String[] args) {
         AtomicCounter atm = new AtomicCounter();
         atm.increment();
-//		Thread t1 = new Thread(new Runnable(){
-//			public void run(){
-//				for(int i=1;i<=10;i++){
-//
-//				}
-//			}
-//		});
-//		t1.start();
+		Thread t1 = new Thread(new Runnable(){
+			public void run(){
+				for(int i=1;i<=10;i++){
+                    System.out.println("Running");
+				}
+			}
+		});
+		t1.start();
     }
 }
