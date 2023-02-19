@@ -1,8 +1,6 @@
 package InterviewProblems;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -28,7 +26,7 @@ public class StreamInterviewJavaTechies {
         employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
 
         //find the total names starts with N
-        method0();
+        //method0();
         System.out.println("\n");
 
         //find the total number of male and female employee
@@ -39,6 +37,12 @@ public class StreamInterviewJavaTechies {
         System.out.println("\n");
 
         //method3();
+        System.out.println("\n");
+
+        //method4();
+        System.out.println("\n");
+
+        method5();
         System.out.println("\n");
     }
 
@@ -65,6 +69,16 @@ public class StreamInterviewJavaTechies {
         Map<String,Double> averageAgeFemaleAndMale = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
         System.out.println(averageAgeFemaleAndMale);
+    }
+    public static void method4() {
+        System.out.println("Query 4 : Get the details of highest paid employee in the organization?");
+        Optional<Employee> highestPaidEmployeeWrapper =
+                employeeList.stream().collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
+        System.out.println(highestPaidEmployeeWrapper.get().name);
+    }
+    public static void method5() {
+        System.out.println("Query 5 : Get the names of all employees who have joined after 2015?");
+        employeeList.stream().filter(s-> s.yearOfJoining > 2015).map(Employee::getName).forEach(System.out::println);
     }
 }
 
