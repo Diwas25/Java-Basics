@@ -42,13 +42,24 @@ public class StreamInterviewJavaTechies {
         //method4();
         System.out.println("\n");
 
-        method5();
+        //method5();
+        System.out.println("\n");
+
+        method00();
         System.out.println("\n");
     }
 
     public static void method0() {
         System.out.println("Query 2 : Print the name of all starts with J in the organization?");
         employeeList.stream().filter(x->x.getName().startsWith("J")).distinct().forEach(System.out::println);
+    }
+    public static void method00() {
+        System.out.println("Query 5 : Get the names,age of all employees in ascending order");
+//        Optional<Employee> highestPaidEmployeeWrapper =
+//                employeeList.stream().collect(Collectors.maxBy(Comparator.comparingInt(Employee::getAge)));
+        Map<String, Long> noOfNameAgeEmployees = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+        System.out.println(noOfNameAgeEmployees);
     }
 
     public static void method1() {
