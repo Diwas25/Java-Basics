@@ -1,0 +1,3 @@
+Elastic Compute Cloud.
+
+It is a service provided by Amazon Web Services (AWS) that allows users to run virtual servers in the cloud. EC2 provides scalable computing capacity, which means you can quickly adjust the amount of computing resources to match your workload needs, making it a popular choice for both small and large-scale applications.
