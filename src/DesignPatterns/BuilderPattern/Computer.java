@@ -2,8 +2,8 @@ package DesignPatterns.BuilderPattern;
 
 public class Computer {
     //required attributes
-    private String processor;
-    private String motherboard;
+    private final String processor;
+    private final String motherboard;
 
     //optional attributes
     private int ram;
